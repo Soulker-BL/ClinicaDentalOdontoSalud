@@ -60,7 +60,7 @@ public class PerfilPacienteForm extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         btnTratamiento = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btnEmitirReceta = new javax.swing.JButton();
         btnVerHistorial = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
@@ -108,13 +108,13 @@ public class PerfilPacienteForm extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(0, 102, 255));
-        jButton3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("Emitir receta");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btnEmitirReceta.setBackground(new java.awt.Color(0, 102, 255));
+        btnEmitirReceta.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnEmitirReceta.setForeground(new java.awt.Color(255, 255, 255));
+        btnEmitirReceta.setText("Emitir receta");
+        btnEmitirReceta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btnEmitirRecetaActionPerformed(evt);
             }
         });
 
@@ -153,7 +153,7 @@ public class PerfilPacienteForm extends javax.swing.JFrame {
                         .addGap(31, 31, 31)
                         .addComponent(btnTratamiento)
                         .addGap(30, 30, 30)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnEmitirReceta, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 125, Short.MAX_VALUE)
                         .addComponent(jButton5)
                         .addGap(26, 26, 26))))
@@ -165,7 +165,7 @@ public class PerfilPacienteForm extends javax.swing.JFrame {
                 .addComponent(jLabel4)
                 .addGap(7, 7, 7)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnEmitirReceta, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnTratamiento, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnVerHistorial, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -417,12 +417,19 @@ public class PerfilPacienteForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnTratamientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTratamientoActionPerformed
-    
+    TratamientoForm form =
+        new TratamientoForm(
+                pacienteActual
+        );
+
+form.setVisible(true);
+
+this.dispose();
     }//GEN-LAST:event_btnTratamientoActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void btnEmitirRecetaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmitirRecetaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_btnEmitirRecetaActionPerformed
 
     private void btnVerHistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerHistorialActionPerformed
                 HistorialPacienteForm historial =
@@ -500,11 +507,11 @@ this.dispose();
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel btnCerrarSesion;
+    private javax.swing.JButton btnEmitirReceta;
     private javax.swing.JLabel btnInicio;
     private javax.swing.JButton btnTratamiento;
     private javax.swing.JButton btnVerHistorial;
     private javax.swing.JLabel imglogo;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;

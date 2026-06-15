@@ -5,7 +5,7 @@
 package models;
 
 public class Tratamiento {
-
+    
     private int id;
     private String dniPaciente;
     private String tratamiento;
@@ -14,8 +14,8 @@ public class Tratamiento {
 
     public int getId() {
         return id;
-    }
-
+}
+    
     public void setId(int id) {
         this.id = id;
     }

@@ -19,31 +19,52 @@ public class TratamientoDAO {
 
         List<Tratamiento> lista = new ArrayList<>();
 
-        String sql = "SELECT id, dni_paciente, tratamiento, estado, porcentaje "
-                   + "FROM tratamientos WHERE dni_paciente=?";
+        String sql =
+        "SELECT * FROM tratamientos WHERE dni_paciente=?";
 
-        try (Connection con = Conexion.conectar();
-             PreparedStatement ps = con.prepareStatement(sql)) {
+        try {
+
+            Connection con =
+                    Conexion.conectar();
+
+            PreparedStatement ps =
+                    con.prepareStatement(sql);
 
             ps.setString(1, dni);
 
-            try (ResultSet rs = ps.executeQuery()) {
+            ResultSet rs =
+                    ps.executeQuery();
 
-                while (rs.next()) {
+            while(rs.next()) {
 
-                    Tratamiento t = new Tratamiento();
+                Tratamiento t =
+                        new Tratamiento();
 
-                    t.setId(rs.getInt("id"));
-                    t.setDniPaciente(rs.getString("dni_paciente"));
-                    t.setTratamiento(rs.getString("tratamiento"));
-                    t.setEstado(rs.getString("estado"));
-                    t.setPorcentaje(rs.getInt("porcentaje"));
+                t.setId(
+                        rs.getInt("id")
+                );
 
-                    lista.add(t);
-                }
+                t.setDniPaciente(
+                        rs.getString("dni_paciente")
+                );
+
+                t.setTratamiento(
+                        rs.getString("tratamiento")
+                );
+
+                t.setEstado(
+                        rs.getString("estado")
+                );
+
+                t.setPorcentaje(
+                        rs.getInt("porcentaje")
+                );
+
+                lista.add(t);
             }
 
-        } catch (Exception e) {
+        } catch(Exception e) {
+
             e.printStackTrace();
         }
 
